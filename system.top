@@ -1,0 +1,14 @@
+#include "top/martini.itp"
+
+[ system ]
+; name
+kalp21t, kalp21m in INSANE! Membrane UpperLeaflet>POPC=1 LowerLeaflet>POPC=1
+
+[ molecules ]
+; name  number
+kalp21t        4
+kalp21m        4
+POPC          2545
+POPC          2545
+W           463741
+CL-             64

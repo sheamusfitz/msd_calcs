@@ -1,0 +1,180 @@
+; MARTINI (martini21p) Coarse Grained topology file for "Protein_A"
+; Created by py version 2.4 
+; Using the following options:  -f KALP-21_atomistic.pdb -ss KALP-21.dssp -elastic -ef 0 -eu 2.5 -v -ff martini21p -p backbone -o kalp21m.top -x kalp21m.pdb
+; Sequence:
+; GKKLALALALALALALALKKA
+; Secondary Structure:
+; C1111HHHHHHHHHHH2222C
+
+[ moleculetype ]
+; Name         Exclusions
+kalp21m         1
+
+[ atoms ]
+    1    Qd     1   GLY    BB     1  1.0000 ; C
+    2    Nd     2   LYS    BB     2  0.0000 ; 1
+    3    C3     2   LYS   SC1     3  0.0000 ; 1
+    4    Qd     2   LYS   SC2     4  1.0000 ; 1
+    5    Nd     3   LYS    BB     5  0.0000 ; 1
+    6    C3     3   LYS   SC1     6  0.0000 ; 1
+    7    Qd     3   LYS   SC2     7  1.0000 ; 1
+    8    Nd     4   LEU    BB     8  0.0000 ; 1
+    9    C1     4   LEU   SC1     9  0.0000 ; 1
+   10    N0     5   ALA    BB    10  0.0000 ; 1
+   11    N0     6   LEU    BB    11  0.0000 ; H
+   12    C1     6   LEU   SC1    12  0.0000 ; H
+   13    C5     7   ALA    BB    13  0.0000 ; H
+   14    N0     8   LEU    BB    14  0.0000 ; H
+   15    C1     8   LEU   SC1    15  0.0000 ; H
+   16    C5     9   ALA    BB    16  0.0000 ; H
+   17    N0    10   LEU    BB    17  0.0000 ; H
+   18    C1    10   LEU   SC1    18  0.0000 ; H
+   19    C5    11   ALA    BB    19  0.0000 ; H
+   20    N0    12   LEU    BB    20  0.0000 ; H
+   21    C1    12   LEU   SC1    21  0.0000 ; H
+   22    C5    13   ALA    BB    22  0.0000 ; H
+   23    N0    14   LEU    BB    23  0.0000 ; H
+   24    C1    14   LEU   SC1    24  0.0000 ; H
+   25    C5    15   ALA    BB    25  0.0000 ; H
+   26    N0    16   LEU    BB    26  0.0000 ; H
+   27    C1    16   LEU   SC1    27  0.0000 ; H
+   28    N0    17   ALA    BB    28  0.0000 ; 2
+   29    Na    18   LEU    BB    29  0.0000 ; 2
+   30    C1    18   LEU   SC1    30  0.0000 ; 2
+   31    Na    19   LYS    BB    31  0.0000 ; 2
+   32    C3    19   LYS   SC1    32  0.0000 ; 2
+   33    Qd    19   LYS   SC2    33  1.0000 ; 2
+   34    Na    20   LYS    BB    34  0.0000 ; 2
+   35    C3    20   LYS   SC1    35  0.0000 ; 2
+   36    Qd    20   LYS   SC2    36  1.0000 ; 2
+   37    Qa    21   ALA    BB    37 -1.0000 ; C
+
+[ bonds ]
+; Backbone bonds
+    1     2      1   0.35000   400 ; GLY(C)-LYS(1)
+    2     5      1   0.35000  1250 ; LYS(1)-LYS(1)
+    5     8      1   0.35000  1250 ; LYS(1)-LEU(1)
+    8    10      1   0.35000  1250 ; LEU(1)-ALA(1)
+   10    11      1   0.35000  1250 ; ALA(1)-LEU(H)
+   11    13      1   0.35000  1250 ; LEU(H)-ALA(H)
+   13    14      1   0.35000  1250 ; ALA(H)-LEU(H)
+   14    16      1   0.35000  1250 ; LEU(H)-ALA(H)
+   16    17      1   0.35000  1250 ; ALA(H)-LEU(H)
+   17    19      1   0.35000  1250 ; LEU(H)-ALA(H)
+   19    20      1   0.35000  1250 ; ALA(H)-LEU(H)
+   20    22      1   0.35000  1250 ; LEU(H)-ALA(H)
+   22    23      1   0.35000  1250 ; ALA(H)-LEU(H)
+   23    25      1   0.35000  1250 ; LEU(H)-ALA(H)
+   25    26      1   0.35000  1250 ; ALA(H)-LEU(H)
+   26    28      1   0.35000  1250 ; LEU(H)-ALA(2)
+   28    29      1   0.35000  1250 ; ALA(2)-LEU(2)
+   29    31      1   0.35000  1250 ; LEU(2)-LYS(2)
+   31    34      1   0.35000  1250 ; LYS(2)-LYS(2)
+   34    37      1   0.35000   400 ; LYS(2)-ALA(C)
+; Sidechain bonds
+    2     3      1   0.33000  5000 ; LYS
+    3     4      1   0.28000  5000 ; LYS
+    5     6      1   0.33000  5000 ; LYS
+    6     7      1   0.28000  5000 ; LYS
+    8     9      1   0.33000  7500 ; LEU
+   11    12      1   0.33000  7500 ; LEU
+   14    15      1   0.33000  7500 ; LEU
+   17    18      1   0.33000  7500 ; LEU
+   20    21      1   0.33000  7500 ; LEU
+   23    24      1   0.33000  7500 ; LEU
+   26    27      1   0.33000  7500 ; LEU
+   29    30      1   0.33000  7500 ; LEU
+   31    32      1   0.33000  5000 ; LYS
+   32    33      1   0.28000  5000 ; LYS
+   34    35      1   0.33000  5000 ; LYS
+   35    36      1   0.28000  5000 ; LYS
+
+[ constraints ]
+
+[ angles ]
+; Backbone angles
+    1     2     5      2    127    25 ; GLY(C)-LYS(1)-LYS(1)
+    2     5     8      2     96   700 ; LYS(1)-LYS(1)-LEU(1)
+    5     8    10      2     96   700 ; LYS(1)-LEU(1)-ALA(1)
+    8    10    11      2     96   700 ; LEU(1)-ALA(1)-LEU(H)
+   10    11    13      2     96   700 ; ALA(1)-LEU(H)-ALA(H)
+   11    13    14      2     96   700 ; LEU(H)-ALA(H)-LEU(H)
+   13    14    16      2     96   700 ; ALA(H)-LEU(H)-ALA(H)
+   14    16    17      2     96   700 ; LEU(H)-ALA(H)-LEU(H)
+   16    17    19      2     96   700 ; ALA(H)-LEU(H)-ALA(H)
+   17    19    20      2     96   700 ; LEU(H)-ALA(H)-LEU(H)
+   19    20    22      2     96   700 ; ALA(H)-LEU(H)-ALA(H)
+   20    22    23      2     96   700 ; LEU(H)-ALA(H)-LEU(H)
+   22    23    25      2     96   700 ; ALA(H)-LEU(H)-ALA(H)
+   23    25    26      2     96   700 ; LEU(H)-ALA(H)-LEU(H)
+   25    26    28      2     96   700 ; ALA(H)-LEU(H)-ALA(2)
+   26    28    29      2     96   700 ; LEU(H)-ALA(2)-LEU(2)
+   28    29    31      2     96   700 ; ALA(2)-LEU(2)-LYS(2)
+   29    31    34      2     96   700 ; LEU(2)-LYS(2)-LYS(2)
+   31    34    37      2    127    25 ; LYS(2)-LYS(2)-ALA(C)
+; Backbone-sidechain angles
+    1     2     3      2    100    25 ; GLY(C)-LYS(1) SBB
+    2     5     6      2    100    25 ; LYS(1)-LYS(1) SBB
+    5     8     9      2    100    25 ; LYS(1)-LEU(1) SBB
+   10    11    12      2    100    25 ; ALA(1)-LEU(H) SBB
+   13    14    15      2    100    25 ; ALA(H)-LEU(H) SBB
+   16    17    18      2    100    25 ; ALA(H)-LEU(H) SBB
+   19    20    21      2    100    25 ; ALA(H)-LEU(H) SBB
+   22    23    24      2    100    25 ; ALA(H)-LEU(H) SBB
+   25    26    27      2    100    25 ; ALA(H)-LEU(H) SBB
+   28    29    30      2    100    25 ; ALA(2)-LEU(2) SBB
+   29    31    32      2    100    25 ; LEU(2)-LYS(2) SBB
+   31    34    35      2    100    25 ; LYS(2)-LYS(2) SBB
+; Sidechain angles
+    2     3     4      2    180    25 ; LYS
+    5     6     7      2    180    25 ; LYS
+   31    32    33      2    180    25 ; LYS
+   34    35    36      2    180    25 ; LYS
+
+[ dihedrals ]
+; Backbone dihedrals
+    2     5     8    10      1   -120   400     1 ; LYS(1)-LYS(1)-LEU(1)-ALA(1)
+    5     8    10    11      1   -120   400     1 ; LYS(1)-LEU(1)-ALA(1)-LEU(H)
+    8    10    11    13      1   -120   400     1 ; LEU(1)-ALA(1)-LEU(H)-ALA(H)
+   10    11    13    14      1   -120   400     1 ; ALA(1)-LEU(H)-ALA(H)-LEU(H)
+   11    13    14    16      1   -120   400     1 ; LEU(H)-ALA(H)-LEU(H)-ALA(H)
+   13    14    16    17      1   -120   400     1 ; ALA(H)-LEU(H)-ALA(H)-LEU(H)
+   14    16    17    19      1   -120   400     1 ; LEU(H)-ALA(H)-LEU(H)-ALA(H)
+   16    17    19    20      1   -120   400     1 ; ALA(H)-LEU(H)-ALA(H)-LEU(H)
+   17    19    20    22      1   -120   400     1 ; LEU(H)-ALA(H)-LEU(H)-ALA(H)
+   19    20    22    23      1   -120   400     1 ; ALA(H)-LEU(H)-ALA(H)-LEU(H)
+   20    22    23    25      1   -120   400     1 ; LEU(H)-ALA(H)-LEU(H)-ALA(H)
+   22    23    25    26      1   -120   400     1 ; ALA(H)-LEU(H)-ALA(H)-LEU(H)
+   23    25    26    28      1   -120   400     1 ; LEU(H)-ALA(H)-LEU(H)-ALA(2)
+   25    26    28    29      1   -120   400     1 ; ALA(H)-LEU(H)-ALA(2)-LEU(2)
+   26    28    29    31      1   -120   400     1 ; LEU(H)-ALA(2)-LEU(2)-LYS(2)
+   28    29    31    34      1   -120   400     1 ; ALA(2)-LEU(2)-LYS(2)-LYS(2)
+; Sidechain improper dihedrals
+
+#ifdef POSRES
+#ifndef POSRES_FC
+#define POSRES_FC 1000.00
+#endif
+ [ position_restraints ]
+      1    1    POSRES_FC    POSRES_FC    POSRES_FC
+      2    1    POSRES_FC    POSRES_FC    POSRES_FC
+      5    1    POSRES_FC    POSRES_FC    POSRES_FC
+      8    1    POSRES_FC    POSRES_FC    POSRES_FC
+     10    1    POSRES_FC    POSRES_FC    POSRES_FC
+     11    1    POSRES_FC    POSRES_FC    POSRES_FC
+     13    1    POSRES_FC    POSRES_FC    POSRES_FC
+     14    1    POSRES_FC    POSRES_FC    POSRES_FC
+     16    1    POSRES_FC    POSRES_FC    POSRES_FC
+     17    1    POSRES_FC    POSRES_FC    POSRES_FC
+     19    1    POSRES_FC    POSRES_FC    POSRES_FC
+     20    1    POSRES_FC    POSRES_FC    POSRES_FC
+     22    1    POSRES_FC    POSRES_FC    POSRES_FC
+     23    1    POSRES_FC    POSRES_FC    POSRES_FC
+     25    1    POSRES_FC    POSRES_FC    POSRES_FC
+     26    1    POSRES_FC    POSRES_FC    POSRES_FC
+     28    1    POSRES_FC    POSRES_FC    POSRES_FC
+     29    1    POSRES_FC    POSRES_FC    POSRES_FC
+     31    1    POSRES_FC    POSRES_FC    POSRES_FC
+     34    1    POSRES_FC    POSRES_FC    POSRES_FC
+     37    1    POSRES_FC    POSRES_FC    POSRES_FC
+#endif
