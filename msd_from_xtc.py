@@ -1,21 +1,39 @@
+
+import sys
+print('Version ',sys.version)
+
 import matplotlib.pyplot as plt
 import numpy as np
 import MDAnalysis as mda
 # import pandas as pd
-# import re
+import re
 # import json
 
-u = mda.Universe("system.gro")
-u.atoms.masses = 1
 
-u2 = mda.Merge(u.select_atoms("not (name W or name CL-)"))
-u2.load_new("nojump.xtc")
+usemda = False
+if usemda == True:
+    u = mda.Universe('system.gro')
+    u.atoms.masses = 1
 
-# print(u.trajectory.ts.positions[0][0])
+    u = mda.Merge(u.select_atoms('not (name W or name CL-)'))
+    u.load_new('nojump.xtc')
 
-kalpt_1 = u2.atoms[0:110]
-# TODO I need to read in this "110" from main file
-# I have to loop over the thing to get this to a numpy array
+    # print(u.trajectory.ts.positions[0][0])
 
+    kalpt_1 = u.atoms[0:110]
+    print(kalpt_1.positions.shape)
 
-print(kalpt_1.positions.shape)
+with open('system.top') as f:
+    lines = f.readlines()
+    i = -1
+    while i < len(lines):
+        i += 1
+        if re.search(r"\[\s*molecules", lines[i]):
+            print(i,lines[i])
+            break
+    while i < len(lines):
+        i += 1
+        if re.search(r"^;", lines[i]) == None:
+            print(lines[i])
+            print(lines[i].split())
+            break
