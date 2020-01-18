@@ -45,5 +45,12 @@ def indexer():
   print(molecules)
   # at this point, the 'molecules' object lists the names (conflicts possible) of the molecules and the quantity of them
 
-
+  molecules_of_interest = []
+  for molecule in molecules:
+    interest_input = input('Should I analyze \033[1m'+molecule[0]+'\033[0m? (y/n/q) :')
+    if interest_input == 'y':
+      molecules_of_interest.append(molecule[0])
+    elif interest_input == 'q':
+      break
+  print(molecules_of_interest)
 indexer()
