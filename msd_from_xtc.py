@@ -12,28 +12,38 @@ import re
 
 usemda = False
 if usemda == True:
-    u = mda.Universe('system.gro')
-    u.atoms.masses = 1
+  u = mda.Universe('system.gro')
+  u.atoms.masses = 1
 
-    u = mda.Merge(u.select_atoms('not (name W or name CL-)'))
-    u.load_new('nojump.xtc')
+  u = mda.Merge(u.select_atoms('not (name W or name CL-)'))
+  u.load_new('nojump.xtc')
 
-    # print(u.trajectory.ts.positions[0][0])
+  # print(u.trajectory.ts.positions[0][0])
 
-    kalpt_1 = u.atoms[0:110]
-    print(kalpt_1.positions.shape)
+  kalpt_1 = u.atoms[0:110]
+  print(kalpt_1.positions.shape)
 
-with open('system.top') as f:
+def indexer():
+  """
+  This function (at the current moment) runs on the current folder and creates an index matrix of the names and numbers of molecules
+  """
+  molecules = []
+  with open('system.top') as f:
     lines = f.readlines()
-    i = -1
-    while i < len(lines):
-        i += 1
-        if re.search(r"\[\s*molecules", lines[i]):
-            print(i,lines[i])
-            break
-    while i < len(lines):
-        i += 1
-        if re.search(r"^;", lines[i]) == None:
-            print(lines[i])
-            print(lines[i].split())
-            break
+    in_molecules = False
+    for line in lines:
+      if in_molecules == True:
+        if not re.search(r"^;", line):
+          # print(line)
+          molecules.append(line.split())
+          # print(molecules)
+      if re.search(r"\[\s*molecules", line):
+        # print(line)
+        in_molecules = True
+  for molecule in molecules:
+    molecule[1] = int(molecule[1])
+  print(molecules)
+  # at this point, the 'molecules' object lists the names (conflicts possible) of the molecules and the quantity of them
+
+
+indexer()
