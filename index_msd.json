@@ -1,0 +1,14 @@
+[
+	{
+		"name": "kalp21m",
+		"com index": [9,12,15,18,21,24,27],
+		"rotator index": 3,
+		"length": 37
+	},
+	{
+		"name": "kalp21t",
+		"com index": [0,36,37,73,74,110],
+		"rotator serial": 0,
+		"length": 111
+	}
+]
