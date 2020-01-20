@@ -71,7 +71,7 @@ def msd():
       print(coms[0][0])
       print(coms[0][1])
 
-      first_atom += 100
+      first_atom += 100 # TODO: this number is garbage
 
 
 
