@@ -8,6 +8,7 @@ import MDAnalysis as mda
 import re
 import json
 import readline
+from termcolor import cprint
 
 
 def indexer():
@@ -45,21 +46,32 @@ def indexer():
 
 def msd():
   with open('./mols_of_interest.json') as f:
-    data = json.load(f)
+    mol_count_dict = json.load(f)
   u = mda.Universe('system.gro')
   u.atoms.masses = 1
   u = mda.Merge(u.select_atoms('not (name W or name CL-)'))
   u.load_new('nojump.xtc')
-  print(u.trajectory.coordinate_array("afc"))
-  print(sum(data.values()))
-  for species in data:
-    # print(species, data[species])
-    print()
 
-    for molecule in range(data[species]):
-      # print(molecule)
-      print()
+  with open('./tracking_indices.json') as f:
+    tracking_indices = json.load(f)
+  print(tracking_indices['kalp21t'])
 
+  print(sum(mol_count_dict.values()))
+
+  first_atom = 0
+  for species in mol_count_dict:
+    for molecule in range(mol_count_dict[species]):
+      cprint(species+'\t'+str(molecule), attrs=['bold'])
+      # print(u.atoms[tracking_indices[species]['com index']])
+
+
+      mol = u.atoms[np.array(tracking_indices[species]['com index'])+first_atom]
+      coms = np.array([(u.trajectory.time, mol.center_of_geometry()) for ts in u.trajectory])
+      print(coms,'\n\n')
+      print(coms[0][0])
+      print(coms[0][1])
+
+      first_atom += 100
 
 
 
